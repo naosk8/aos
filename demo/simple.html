@@ -142,9 +142,13 @@
 
     <script src="../dist/aos.js"></script>
     <script>
-      AOS.init({
-        easing: 'ease-in-out-sine'
-      });
+      const AOS_OPTIONS = {
+        easing: 'ease-in-out-sine',
+        getScrollOffset: () => {return window.pageYOffset - 300;},
+      };
+      AOS.init(AOS_OPTIONS);
+      const scrollHandler = AOS.getScrollHandler(AOS_OPTIONS);
+      console.log(scrollHandler);
     </script>
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
