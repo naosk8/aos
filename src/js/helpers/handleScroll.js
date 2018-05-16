@@ -20,12 +20,13 @@ const setState = function (el, top, once) {
 /**
  * Scroll logic - add or remove 'aos-animate' class on scroll
  *
- * @param  {array} $elements         array of elements nodes
- * @param  {bool} once               plugin option
+ * @param  {array} $elements          array of elements nodes
+ * @param  {bool} once                plugin option
+ * @oaram  {function} getScrollOffset getter for scroll offset
  * @return {void}
  */
-const handleScroll = function ($elements, once) {
-  const scrollTop = window.pageYOffset;
+const handleScroll = function ($elements, once, getScrollOffset) {
+  const scrollTop = getScrollOffset();
   const windowHeight = window.innerHeight;
   /**
    * Check all registered elements positions
