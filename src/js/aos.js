@@ -171,19 +171,12 @@ const init = function init(settings) {
   return $aosElements;
 };
 
-const getScrollHandler = function getScrollHandler(settings) {
-  options = Object.assign(options, settings);
-  $aosElements = elements();
-  return () => {handleScroll($aosElements, options.once, options.getScrollOffset)};
-}
-
 /**
  * Export Public API
  */
 
 module.exports = {
   init,
-  getScrollHandler,
   refresh,
   refreshHard
 };
